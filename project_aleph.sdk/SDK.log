@@ -1,0 +1,1595 @@
+16:26:20 INFO  : Launching XSDB server: xsdb.bat -interactive C:\Users\Brady\project_aleph\project_aleph.sdk\temp_xsdb_launch_script.tcl
+16:26:22 INFO  : XSDB server has started successfully.
+16:26:22 INFO  : Processing command line option -hwspec C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper.hdf.
+17:22:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+17:22:50 INFO  : 'fpga -state' command is executed.
+17:22:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:22:51 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+17:22:51 INFO  : 'jtag frequency' command is executed.
+17:22:51 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:22:53 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+17:22:53 INFO  : System reset is completed.
+17:22:56 INFO  : 'after 3000' command is executed.
+17:22:57 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+17:22:57 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:22:58 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+17:22:59 INFO  : 'ps7_init' command is executed.
+17:22:59 INFO  : 'ps7_post_config' command is executed.
+17:23:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:23:00 INFO  : The application 'C:/Users/Brady/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:23:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+17:23:01 INFO  : Memory regions updated for context APU
+17:23:01 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+17:27:22 INFO  : Disconnected from the channel tcfchan#1.
+17:27:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+17:27:22 INFO  : 'fpga -state' command is executed.
+17:27:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:27:27 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+17:27:28 INFO  : 'jtag frequency' command is executed.
+17:27:28 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:27:28 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+17:27:28 INFO  : System reset is completed.
+17:27:31 INFO  : 'after 3000' command is executed.
+17:27:31 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+17:27:35 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:27:35 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+17:27:37 INFO  : 'ps7_init' command is executed.
+17:27:37 INFO  : 'ps7_post_config' command is executed.
+17:27:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:27:37 INFO  : The application 'C:/Users/Brady/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:27:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+17:27:37 INFO  : Memory regions updated for context APU
+17:27:37 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+17:44:43 INFO  : Disconnected from the channel tcfchan#2.
+17:44:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+17:44:44 INFO  : 'fpga -state' command is executed.
+17:44:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:44:47 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+17:44:47 INFO  : 'jtag frequency' command is executed.
+17:44:47 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:44:47 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+17:44:47 INFO  : System reset is completed.
+17:44:50 INFO  : 'after 3000' command is executed.
+17:44:51 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+17:44:54 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:44:54 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+17:44:55 INFO  : 'ps7_init' command is executed.
+17:44:55 INFO  : 'ps7_post_config' command is executed.
+17:44:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:44:55 INFO  : The application 'C:/Users/Brady/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:44:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+17:44:55 INFO  : Memory regions updated for context APU
+17:44:56 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+17:49:45 INFO  : Disconnected from the channel tcfchan#3.
+17:49:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+17:49:45 INFO  : 'fpga -state' command is executed.
+17:49:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:49:49 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+17:49:49 INFO  : 'jtag frequency' command is executed.
+17:49:49 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:49:49 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+17:49:50 INFO  : System reset is completed.
+17:49:53 INFO  : 'after 3000' command is executed.
+17:49:53 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+17:49:56 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:49:56 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+17:49:58 INFO  : 'ps7_init' command is executed.
+17:49:58 INFO  : 'ps7_post_config' command is executed.
+17:49:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:49:58 INFO  : The application 'C:/Users/Brady/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:49:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+17:49:59 INFO  : Memory regions updated for context APU
+17:49:59 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+18:00:03 INFO  : Disconnected from the channel tcfchan#4.
+18:00:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+18:00:40 INFO  : 'fpga -state' command is executed.
+18:00:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:00:41 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+18:00:41 INFO  : 'jtag frequency' command is executed.
+18:00:41 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:00:42 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+18:00:42 INFO  : System reset is completed.
+18:00:45 INFO  : 'after 3000' command is executed.
+18:00:45 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+18:00:49 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:00:49 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+18:00:50 INFO  : 'ps7_init' command is executed.
+18:00:50 INFO  : 'ps7_post_config' command is executed.
+18:00:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:00:50 INFO  : The application 'C:/Users/Brady/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:00:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+18:00:50 INFO  : Memory regions updated for context APU
+18:00:50 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+18:54:17 INFO  : Disconnected from the channel tcfchan#5.
+18:54:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+18:54:17 INFO  : 'fpga -state' command is executed.
+18:56:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:56:24 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+18:56:24 INFO  : 'jtag frequency' command is executed.
+18:56:24 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:56:24 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+18:56:24 INFO  : System reset is completed.
+18:56:27 INFO  : 'after 3000' command is executed.
+18:56:27 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+18:56:32 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:56:32 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+18:56:33 INFO  : 'ps7_init' command is executed.
+18:56:33 INFO  : 'ps7_post_config' command is executed.
+18:56:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:34 INFO  : The application 'C:/Users/Brady/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:56:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+18:56:34 INFO  : Memory regions updated for context APU
+18:56:34 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+18:56:50 INFO  : Disconnected from the channel tcfchan#6.
+18:56:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+18:56:50 INFO  : 'fpga -state' command is executed.
+18:56:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:56:55 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+18:56:55 INFO  : 'jtag frequency' command is executed.
+18:56:55 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:56:55 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+18:56:55 INFO  : System reset is completed.
+18:56:58 INFO  : 'after 3000' command is executed.
+18:56:58 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+18:57:02 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:57:02 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+18:57:03 INFO  : 'ps7_init' command is executed.
+18:57:03 INFO  : 'ps7_post_config' command is executed.
+18:57:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:57:04 INFO  : The application 'C:/Users/Brady/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:57:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+18:57:04 INFO  : Memory regions updated for context APU
+18:57:04 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+19:21:01 INFO  : Disconnected from the channel tcfchan#7.
+09:29:00 INFO  : Launching XSDB server: xsdb.bat -interactive C:\Users\Brady\project_aleph\project_aleph.sdk\temp_xsdb_launch_script.tcl
+09:29:02 INFO  : XSDB server has started successfully.
+09:29:03 INFO  : Processing command line option -hwspec C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper.hdf.
+09:29:03 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+11:26:40 INFO  : Launching XSDB server: xsdb.bat -interactive C:\Users\Brady\project_aleph\project_aleph.sdk\temp_xsdb_launch_script.tcl
+11:26:51 INFO  : XSDB server has started successfully.
+11:26:51 INFO  : Processing command line option -hwspec C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper.hdf.
+11:26:51 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+08:23:26 INFO  : Launching XSDB server: xsdb.bat -interactive C:\Users\Brady\project_aleph\project_aleph.sdk\temp_xsdb_launch_script.tcl
+08:23:28 INFO  : XSDB server has started successfully.
+08:23:29 INFO  : Processing command line option -hwspec C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper.hdf.
+08:23:29 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+08:29:06 INFO  : Launching XSDB server: xsdb.bat -interactive C:\Users\Brady\project_aleph\project_aleph.sdk\temp_xsdb_launch_script.tcl
+08:29:08 INFO  : XSDB server has started successfully.
+08:29:08 INFO  : Processing command line option -hwspec C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper.hdf.
+08:29:08 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+09:03:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:03:17 INFO  : 'fpga -state' command is executed.
+09:03:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:03:18 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:03:18 INFO  : 'jtag frequency' command is executed.
+09:03:18 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:03:18 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:03:18 INFO  : System reset is completed.
+09:03:21 INFO  : 'after 3000' command is executed.
+09:03:21 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:03:21 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:03:21 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:03:22 INFO  : 'ps7_init' command is executed.
+09:03:22 INFO  : 'ps7_post_config' command is executed.
+09:03:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:03:22 INFO  : The application 'C:/Users/Brady/FreeRTOS_2/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:03:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_2/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:03:22 INFO  : Memory regions updated for context APU
+09:03:22 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+09:04:51 INFO  : Disconnected from the channel tcfchan#1.
+09:04:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:04:51 INFO  : 'fpga -state' command is executed.
+09:04:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:04:56 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:04:56 INFO  : 'jtag frequency' command is executed.
+09:04:56 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:04:56 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:04:56 INFO  : System reset is completed.
+09:04:59 INFO  : 'after 3000' command is executed.
+09:04:59 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:05:02 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:05:02 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:05:03 INFO  : 'ps7_init' command is executed.
+09:05:03 INFO  : 'ps7_post_config' command is executed.
+09:05:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:05:03 INFO  : The application 'C:/Users/Brady/FreeRTOS_2/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:05:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_2/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:05:03 INFO  : Memory regions updated for context APU
+09:05:03 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+09:28:05 INFO  : Disconnected from the channel tcfchan#2.
+09:29:53 INFO  : Launching XSDB server: xsdb.bat -interactive C:\Users\Brady\project_aleph\project_aleph.sdk\temp_xsdb_launch_script.tcl
+09:29:58 INFO  : XSDB server has started successfully.
+09:29:58 INFO  : Processing command line option -hwspec C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper.hdf.
+09:29:58 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+09:37:44 INFO  : Launching XSDB server: xsdb.bat -interactive C:\Users\Brady\project_aleph\project_aleph.sdk\temp_xsdb_launch_script.tcl
+09:37:47 INFO  : XSDB server has started successfully.
+09:37:47 INFO  : Processing command line option -hwspec C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper.hdf.
+09:37:47 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+09:44:42 INFO  : Refreshed build settings on project RTOSDemo
+09:55:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:55:13 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:55:13 INFO  : 'jtag frequency' command is executed.
+09:55:13 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:55:13 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:55:13 INFO  : System reset is completed.
+09:55:17 INFO  : 'after 3000' command is executed.
+09:55:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:55:18 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:55:18 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:55:18 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:55:18 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:55:19 INFO  : 'ps7_init' command is executed.
+09:55:19 INFO  : 'ps7_post_config' command is executed.
+09:55:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:55:19 INFO  : The application 'C:/Users/Brady/FreeRTOS_2/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:55:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_2/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:55:19 INFO  : Memory regions updated for context APU
+09:55:19 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\rtosdemo_debug.tcl'
+09:58:55 INFO  : Disconnected from the channel tcfchan#1.
+09:58:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:58:56 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:58:56 INFO  : 'jtag frequency' command is executed.
+09:58:56 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:58:56 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:58:56 INFO  : System reset is completed.
+09:58:59 INFO  : 'after 3000' command is executed.
+09:58:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:59:00 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:59:00 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:59:04 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:59:04 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:59:04 INFO  : 'ps7_init' command is executed.
+09:59:04 INFO  : 'ps7_post_config' command is executed.
+09:59:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:59:05 INFO  : The application 'C:/Users/Brady/FreeRTOS_2/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:59:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_2/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:59:05 INFO  : Memory regions updated for context APU
+09:59:05 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\rtosdemo_debug.tcl'
+10:16:48 INFO  : Disconnected from the channel tcfchan#2.
+10:17:47 INFO  : Launching XSDB server: xsdb.bat -interactive C:\Users\Brady\project_aleph\project_aleph.sdk\temp_xsdb_launch_script.tcl
+10:17:52 INFO  : XSDB server has started successfully.
+10:17:52 INFO  : Processing command line option -hwspec C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper.hdf.
+10:17:52 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+10:49:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:50:00 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+10:50:00 INFO  : 'jtag frequency' command is executed.
+10:50:00 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:50:00 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:50:00 INFO  : System reset is completed.
+10:50:03 INFO  : 'after 3000' command is executed.
+10:50:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+10:50:05 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+10:50:05 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:50:05 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:50:05 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:50:05 INFO  : 'ps7_init' command is executed.
+10:50:05 INFO  : 'ps7_post_config' command is executed.
+10:50:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:50:06 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:50:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+10:50:06 INFO  : Memory regions updated for context APU
+10:50:06 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+10:52:18 INFO  : Disconnected from the channel tcfchan#1.
+08:33:55 INFO  : Launching XSDB server: xsdb.bat -interactive C:\Users\Brady\project_aleph\project_aleph.sdk\temp_xsdb_launch_script.tcl
+08:33:57 INFO  : XSDB server has started successfully.
+08:33:58 INFO  : Processing command line option -hwspec C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper.hdf.
+08:33:58 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+08:36:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:37:05 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+08:37:05 INFO  : 'jtag frequency' command is executed.
+08:37:05 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+08:37:05 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+08:37:05 INFO  : System reset is completed.
+08:37:08 INFO  : 'after 3000' command is executed.
+08:37:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+08:37:10 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+08:37:11 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+08:37:11 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+08:37:11 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+08:37:11 INFO  : 'ps7_init' command is executed.
+08:37:12 INFO  : 'ps7_post_config' command is executed.
+08:37:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+08:37:12 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+08:37:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+08:37:12 INFO  : Memory regions updated for context APU
+08:37:12 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+08:53:30 INFO  : Disconnected from the channel tcfchan#1.
+08:53:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:53:31 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+08:53:31 INFO  : 'jtag frequency' command is executed.
+08:53:31 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+08:53:31 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+08:53:31 INFO  : System reset is completed.
+08:53:34 INFO  : 'after 3000' command is executed.
+08:53:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+08:53:35 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+08:53:35 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+08:53:38 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+08:53:38 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+08:53:39 INFO  : 'ps7_init' command is executed.
+08:53:39 INFO  : 'ps7_post_config' command is executed.
+08:53:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+08:53:40 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+08:53:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+08:53:40 INFO  : Memory regions updated for context APU
+08:53:40 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+08:57:39 INFO  : Disconnected from the channel tcfchan#2.
+08:57:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:57:39 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+08:57:39 INFO  : 'jtag frequency' command is executed.
+08:57:39 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+08:57:39 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+08:57:39 INFO  : System reset is completed.
+08:57:42 INFO  : 'after 3000' command is executed.
+08:57:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+08:57:44 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+08:57:44 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+08:57:47 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+08:57:47 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+08:57:48 INFO  : 'ps7_init' command is executed.
+08:57:48 INFO  : 'ps7_post_config' command is executed.
+08:57:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+08:57:48 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+08:57:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+08:57:48 INFO  : Memory regions updated for context APU
+08:57:48 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+09:00:55 INFO  : Disconnected from the channel tcfchan#3.
+09:00:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:00:55 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:00:55 INFO  : 'jtag frequency' command is executed.
+09:00:55 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:00:55 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:00:55 INFO  : System reset is completed.
+09:00:58 INFO  : 'after 3000' command is executed.
+09:00:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:01:00 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:01:00 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:01:03 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:01:03 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:01:03 INFO  : 'ps7_init' command is executed.
+09:01:03 INFO  : 'ps7_post_config' command is executed.
+09:01:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:01:04 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:01:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:01:04 INFO  : Memory regions updated for context APU
+09:01:04 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+09:01:26 INFO  : Disconnected from the channel tcfchan#4.
+09:02:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:02:49 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:02:49 INFO  : 'jtag frequency' command is executed.
+09:02:49 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:02:49 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:02:49 INFO  : System reset is completed.
+09:02:52 INFO  : 'after 3000' command is executed.
+09:02:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:02:53 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:02:53 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:02:57 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:02:57 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:02:57 INFO  : 'ps7_init' command is executed.
+09:02:57 INFO  : 'ps7_post_config' command is executed.
+09:02:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:02:58 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:02:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:02:58 INFO  : Memory regions updated for context APU
+09:02:58 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+09:05:20 INFO  : Disconnected from the channel tcfchan#5.
+09:05:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:05:20 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:05:20 INFO  : 'jtag frequency' command is executed.
+09:05:20 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:05:20 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:05:20 INFO  : System reset is completed.
+09:05:23 INFO  : 'after 3000' command is executed.
+09:05:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:05:25 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:05:25 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:05:28 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:05:28 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:05:29 INFO  : 'ps7_init' command is executed.
+09:05:29 INFO  : 'ps7_post_config' command is executed.
+09:05:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:05:30 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:05:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:05:30 INFO  : Memory regions updated for context APU
+09:05:30 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+09:05:43 INFO  : Disconnected from the channel tcfchan#6.
+09:09:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:09:43 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:09:43 INFO  : 'jtag frequency' command is executed.
+09:09:43 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:09:43 ERROR : no targets found with "name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"". available targets:
+  1  APU (JTAG port open error. AP transaction error, DAP status f0000021)
+     2* ARM Cortex-A9 MPCore #0 (DEVICEEN is '0')
+     3  ARM Cortex-A9 MPCore #1 (DEVICEEN is '0')
+  4  xc7z010
+09:09:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+----------------End of Script----------------
+
+09:10:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:10:04 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:10:04 INFO  : 'jtag frequency' command is executed.
+09:10:04 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:10:04 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:10:05 INFO  : System reset is completed.
+09:10:08 INFO  : 'after 3000' command is executed.
+09:10:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:10:09 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:10:09 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:10:13 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:10:13 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:10:14 INFO  : 'ps7_init' command is executed.
+09:10:14 INFO  : 'ps7_post_config' command is executed.
+09:10:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:10:14 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:10:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:10:14 INFO  : Memory regions updated for context APU
+09:10:14 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+09:10:57 INFO  : Disconnected from the channel tcfchan#7.
+09:20:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:20:55 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:20:55 INFO  : 'jtag frequency' command is executed.
+09:20:55 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:20:55 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:20:55 INFO  : System reset is completed.
+09:20:58 INFO  : 'after 3000' command is executed.
+09:20:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:20:59 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:21:00 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:21:03 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:21:03 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:21:04 INFO  : 'ps7_init' command is executed.
+09:21:04 INFO  : 'ps7_post_config' command is executed.
+09:21:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:21:05 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:21:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:21:05 INFO  : Memory regions updated for context APU
+09:21:05 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+09:21:08 INFO  : Disconnected from the channel tcfchan#8.
+09:21:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:21:51 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:21:51 INFO  : 'jtag frequency' command is executed.
+09:21:51 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:21:51 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:21:52 INFO  : System reset is completed.
+09:21:55 INFO  : 'after 3000' command is executed.
+09:21:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:21:56 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:21:56 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:22:00 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:22:00 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:22:00 INFO  : 'ps7_init' command is executed.
+09:22:00 INFO  : 'ps7_post_config' command is executed.
+09:22:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:22:01 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:22:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:22:01 INFO  : Memory regions updated for context APU
+09:22:01 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+09:24:08 INFO  : Disconnected from the channel tcfchan#9.
+09:24:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:24:09 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:24:09 INFO  : 'jtag frequency' command is executed.
+09:24:09 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:24:09 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:24:09 INFO  : System reset is completed.
+09:24:12 INFO  : 'after 3000' command is executed.
+09:24:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:24:13 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:24:13 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:24:16 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:24:16 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:24:17 INFO  : 'ps7_init' command is executed.
+09:24:17 INFO  : 'ps7_post_config' command is executed.
+09:24:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:24:18 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:24:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:24:18 INFO  : Memory regions updated for context APU
+09:24:18 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+09:24:47 INFO  : Disconnected from the channel tcfchan#10.
+09:28:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:28:37 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:28:37 INFO  : 'jtag frequency' command is executed.
+09:28:37 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:28:37 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:28:37 INFO  : System reset is completed.
+09:28:40 INFO  : 'after 3000' command is executed.
+09:28:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:28:42 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:28:42 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:28:45 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:28:46 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:28:46 INFO  : 'ps7_init' command is executed.
+09:28:46 INFO  : 'ps7_post_config' command is executed.
+09:28:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:28:47 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:28:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:28:47 INFO  : Memory regions updated for context APU
+09:28:47 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+09:36:26 INFO  : Disconnected from the channel tcfchan#11.
+09:36:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:36:26 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:36:26 INFO  : 'jtag frequency' command is executed.
+09:36:26 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:36:27 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:36:27 INFO  : System reset is completed.
+09:36:30 INFO  : 'after 3000' command is executed.
+09:36:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:36:31 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:36:31 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:36:34 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:36:34 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:36:35 INFO  : 'ps7_init' command is executed.
+09:36:35 INFO  : 'ps7_post_config' command is executed.
+09:36:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:36:36 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:36:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:36:36 INFO  : Memory regions updated for context APU
+09:36:36 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+10:16:27 INFO  : Disconnected from the channel tcfchan#12.
+10:23:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:23:08 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+10:23:08 INFO  : 'jtag frequency' command is executed.
+10:23:08 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:23:08 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:23:08 INFO  : System reset is completed.
+10:23:11 INFO  : 'after 3000' command is executed.
+10:23:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+10:23:13 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+10:23:13 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:23:16 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:23:16 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:23:17 INFO  : 'ps7_init' command is executed.
+10:23:17 INFO  : 'ps7_post_config' command is executed.
+10:23:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:23:18 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:23:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+10:23:18 INFO  : Memory regions updated for context APU
+10:23:18 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+10:24:31 INFO  : Disconnected from the channel tcfchan#13.
+10:24:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:25:00 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+10:25:00 INFO  : 'jtag frequency' command is executed.
+10:25:00 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:25:00 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:25:00 INFO  : System reset is completed.
+10:25:04 INFO  : 'after 3000' command is executed.
+10:25:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+10:25:05 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+10:25:05 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:25:09 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:25:09 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:25:09 INFO  : 'ps7_init' command is executed.
+10:25:09 INFO  : 'ps7_post_config' command is executed.
+10:25:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:25:10 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:25:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+10:25:10 INFO  : Memory regions updated for context APU
+10:25:10 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+10:26:48 INFO  : Disconnected from the channel tcfchan#14.
+10:26:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:26:49 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+10:26:49 INFO  : 'jtag frequency' command is executed.
+10:26:49 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:26:49 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:26:49 INFO  : System reset is completed.
+10:26:52 INFO  : 'after 3000' command is executed.
+10:26:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+10:26:53 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+10:26:54 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:26:57 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:26:57 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:26:57 INFO  : 'ps7_init' command is executed.
+10:26:57 INFO  : 'ps7_post_config' command is executed.
+10:26:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:26:58 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:26:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+10:26:58 INFO  : Memory regions updated for context APU
+10:26:58 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+10:30:23 INFO  : Disconnected from the channel tcfchan#15.
+10:45:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:45:44 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+10:45:45 INFO  : 'jtag frequency' command is executed.
+10:45:45 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:45:45 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:45:45 INFO  : System reset is completed.
+10:45:48 INFO  : 'after 3000' command is executed.
+10:45:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+10:45:50 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+10:45:50 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:45:53 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:45:53 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:45:54 INFO  : 'ps7_init' command is executed.
+10:45:54 INFO  : 'ps7_post_config' command is executed.
+10:45:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:45:55 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:45:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+10:45:55 INFO  : Memory regions updated for context APU
+10:45:55 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+10:51:35 INFO  : Disconnected from the channel tcfchan#16.
+10:51:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:51:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+10:52:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:52:44 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+10:52:44 INFO  : 'jtag frequency' command is executed.
+10:52:44 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:52:44 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:52:44 INFO  : System reset is completed.
+10:52:47 INFO  : 'after 3000' command is executed.
+10:52:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+10:52:49 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+10:52:49 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:52:53 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:52:53 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:52:54 INFO  : 'ps7_init' command is executed.
+10:52:54 INFO  : 'ps7_post_config' command is executed.
+10:52:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:52:55 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:52:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+10:52:55 INFO  : Memory regions updated for context APU
+10:52:55 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+11:01:45 INFO  : Disconnected from the channel tcfchan#17.
+11:01:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:01:45 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+11:01:45 INFO  : 'jtag frequency' command is executed.
+11:01:45 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:01:45 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+11:01:46 INFO  : System reset is completed.
+11:01:49 INFO  : 'after 3000' command is executed.
+11:01:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+11:01:50 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:01:50 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+11:01:54 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+11:01:54 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+11:01:55 INFO  : 'ps7_init' command is executed.
+11:01:55 INFO  : 'ps7_post_config' command is executed.
+11:01:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:01:55 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:01:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+11:01:55 INFO  : Memory regions updated for context APU
+11:01:55 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+11:16:47 INFO  : Disconnected from the channel tcfchan#18.
+11:16:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:16:47 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+11:16:47 INFO  : 'jtag frequency' command is executed.
+11:16:48 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:16:48 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+11:16:48 INFO  : System reset is completed.
+11:16:51 INFO  : 'after 3000' command is executed.
+11:16:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+11:16:52 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:16:53 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+11:16:56 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+11:16:56 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+11:16:57 INFO  : 'ps7_init' command is executed.
+11:16:57 INFO  : 'ps7_post_config' command is executed.
+11:16:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:16:57 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:16:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+11:16:58 INFO  : Memory regions updated for context APU
+11:16:58 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+11:57:44 INFO  : Disconnected from the channel tcfchan#19.
+11:57:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:57:45 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+11:57:45 INFO  : 'jtag frequency' command is executed.
+11:57:45 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:57:45 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+11:57:46 INFO  : System reset is completed.
+11:57:49 INFO  : 'after 3000' command is executed.
+11:57:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+11:57:50 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:57:50 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+11:57:55 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+11:57:55 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+11:57:55 INFO  : 'ps7_init' command is executed.
+11:57:56 INFO  : 'ps7_post_config' command is executed.
+11:57:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:57:56 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:57:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+11:57:56 INFO  : Memory regions updated for context APU
+11:57:56 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+12:07:11 INFO  : Disconnected from the channel tcfchan#20.
+09:09:00 INFO  : Launching XSDB server: xsdb.bat -interactive C:\Users\Brady\project_aleph\project_aleph.sdk\temp_xsdb_launch_script.tcl
+09:09:03 INFO  : XSDB server has started successfully.
+09:09:03 INFO  : Processing command line option -hwspec C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper.hdf.
+09:09:03 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+09:12:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:12:02 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:12:02 INFO  : 'jtag frequency' command is executed.
+09:12:02 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:12:03 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:12:03 INFO  : System reset is completed.
+09:12:06 INFO  : 'after 3000' command is executed.
+09:12:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:12:08 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:12:08 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:12:08 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:12:08 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:12:09 INFO  : 'ps7_init' command is executed.
+09:12:09 INFO  : 'ps7_post_config' command is executed.
+09:12:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:12:10 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:12:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:12:10 INFO  : Memory regions updated for context APU
+09:12:10 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+09:24:43 INFO  : Disconnected from the channel tcfchan#1.
+09:28:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:28:06 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:28:06 INFO  : 'jtag frequency' command is executed.
+09:28:06 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:28:06 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:28:07 INFO  : System reset is completed.
+09:28:10 INFO  : 'after 3000' command is executed.
+09:28:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:28:11 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:28:11 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:28:14 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:28:14 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:28:14 INFO  : 'ps7_init' command is executed.
+09:28:14 INFO  : 'ps7_post_config' command is executed.
+09:28:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:28:15 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:28:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:28:15 INFO  : Memory regions updated for context APU
+09:28:15 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+09:29:29 INFO  : Disconnected from the channel tcfchan#2.
+09:29:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:29:37 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:29:37 INFO  : 'jtag frequency' command is executed.
+09:29:37 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:29:37 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:29:37 INFO  : System reset is completed.
+09:29:40 INFO  : 'after 3000' command is executed.
+09:29:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:29:42 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:29:42 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:29:44 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:29:44 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:29:45 INFO  : 'ps7_init' command is executed.
+09:29:45 INFO  : 'ps7_post_config' command is executed.
+09:29:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:29:46 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:29:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:29:46 INFO  : Memory regions updated for context APU
+09:29:46 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+09:49:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:49:04 INFO  : Disconnected from the channel tcfchan#3.
+09:49:04 WARN  : SDK version '2016.2' doesn't match hw_server version 'null'. Some debug features may not work.
+09:49:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+09:49:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:49:35 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+09:49:35 INFO  : 'jtag frequency' command is executed.
+09:49:35 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:49:35 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:49:35 INFO  : System reset is completed.
+09:49:38 INFO  : 'after 3000' command is executed.
+09:49:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+09:49:40 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:49:40 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:49:42 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:49:42 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+09:49:43 INFO  : 'ps7_init' command is executed.
+09:49:43 INFO  : 'ps7_post_config' command is executed.
+09:49:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:49:44 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:49:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+09:49:44 INFO  : Memory regions updated for context APU
+09:49:44 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+10:07:14 INFO  : Disconnected from the channel tcfchan#4.
+10:16:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:16:42 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+10:16:42 INFO  : 'jtag frequency' command is executed.
+10:16:42 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:16:42 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:16:42 INFO  : System reset is completed.
+10:16:45 INFO  : 'after 3000' command is executed.
+10:16:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+10:16:46 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+10:16:46 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:16:49 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:16:49 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:16:50 INFO  : 'ps7_init' command is executed.
+10:16:50 INFO  : 'ps7_post_config' command is executed.
+10:16:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:16:51 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:16:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+10:16:51 INFO  : Memory regions updated for context APU
+10:16:51 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+10:18:12 INFO  : Disconnected from the channel tcfchan#5.
+10:18:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:18:24 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+10:18:24 INFO  : 'jtag frequency' command is executed.
+10:18:24 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:18:24 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:18:24 INFO  : System reset is completed.
+10:18:27 INFO  : 'after 3000' command is executed.
+10:18:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+10:18:29 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+10:18:29 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:18:32 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:18:32 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:18:32 INFO  : 'ps7_init' command is executed.
+10:18:32 INFO  : 'ps7_post_config' command is executed.
+10:18:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:18:33 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:18:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+10:18:33 INFO  : Memory regions updated for context APU
+10:18:33 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+10:20:09 INFO  : Disconnected from the channel tcfchan#6.
+10:20:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:20:20 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+10:20:20 INFO  : 'jtag frequency' command is executed.
+10:20:20 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:20:20 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:20:20 INFO  : System reset is completed.
+10:20:23 INFO  : 'after 3000' command is executed.
+10:20:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+10:20:25 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+10:20:25 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:20:28 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:20:28 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:20:28 INFO  : 'ps7_init' command is executed.
+10:20:29 INFO  : 'ps7_post_config' command is executed.
+10:20:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:20:29 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:20:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+10:20:29 INFO  : Memory regions updated for context APU
+10:20:29 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+10:22:31 INFO  : Disconnected from the channel tcfchan#7.
+10:25:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:25:13 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+10:25:13 INFO  : 'jtag frequency' command is executed.
+10:25:13 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:25:13 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:25:13 INFO  : System reset is completed.
+10:25:16 INFO  : 'after 3000' command is executed.
+10:25:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+10:25:18 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+10:25:18 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:25:20 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:25:20 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:25:21 INFO  : 'ps7_init' command is executed.
+10:25:21 INFO  : 'ps7_post_config' command is executed.
+10:25:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:25:22 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:25:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+10:25:22 INFO  : Memory regions updated for context APU
+10:25:22 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+10:25:28 INFO  : Disconnected from the channel tcfchan#8.
+10:26:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:26:45 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+10:26:45 INFO  : 'jtag frequency' command is executed.
+10:26:45 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:26:45 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:26:46 INFO  : System reset is completed.
+10:26:49 INFO  : 'after 3000' command is executed.
+10:26:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+10:26:50 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+10:26:50 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:26:53 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:26:53 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:26:54 INFO  : 'ps7_init' command is executed.
+10:26:54 INFO  : 'ps7_post_config' command is executed.
+10:26:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:26:55 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:26:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+10:26:55 INFO  : Memory regions updated for context APU
+10:26:55 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+10:34:17 INFO  : Disconnected from the channel tcfchan#9.
+10:35:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:35:28 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+10:35:28 INFO  : 'jtag frequency' command is executed.
+10:35:28 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:35:28 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:35:28 INFO  : System reset is completed.
+10:35:31 INFO  : 'after 3000' command is executed.
+10:35:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+10:35:32 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+10:35:33 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:35:36 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:35:36 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:35:36 INFO  : 'ps7_init' command is executed.
+10:35:36 INFO  : 'ps7_post_config' command is executed.
+10:35:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:35:37 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:35:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+10:35:37 INFO  : Memory regions updated for context APU
+10:35:37 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+10:47:59 INFO  : Disconnected from the channel tcfchan#10.
+10:49:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:49:44 INFO  : Jtag cable 'Digilent Zybo 210279654721A' is selected.
+10:49:44 INFO  : 'jtag frequency' command is executed.
+10:49:44 INFO  : Sourcing of 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:49:44 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:49:44 INFO  : System reset is completed.
+10:49:47 INFO  : 'after 3000' command is executed.
+10:49:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1' command is executed.
+10:49:48 INFO  : FPGA configured successfully with bitstream "C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+10:49:48 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:49:52 INFO  : Hardware design information is loaded from 'C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:49:52 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0' command is executed.
+10:49:52 INFO  : 'ps7_init' command is executed.
+10:49:52 INFO  : 'ps7_post_config' command is executed.
+10:49:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:49:53 INFO  : The application 'C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:49:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279654721A" && level==0} -index 1
+fpga -file C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+loadhw C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279654721A"} -index 0
+dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf
+----------------End of Script----------------
+
+10:49:53 INFO  : Memory regions updated for context APU
+10:49:53 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
