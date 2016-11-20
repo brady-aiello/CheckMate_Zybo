@@ -1593,3 +1593,8 @@ dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/
 
 10:49:53 INFO  : Memory regions updated for context APU
 10:49:53 INFO  : Launch script is exported to file 'C:\Users\Brady\project_aleph\project_aleph.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\new_configuration.tcl'
+12:58:50 INFO  : Disconnected from the channel tcfchan#11.
+03:24:39 INFO  : Launching XSDB server: xsdb.bat -interactive C:\Users\Brady\project_aleph\project_aleph.sdk\temp_xsdb_launch_script.tcl
+03:24:42 INFO  : XSDB server has started successfully.
+03:24:42 INFO  : Processing command line option -hwspec C:/Users/Brady/project_aleph/project_aleph.sdk/design_1_wrapper.hdf.
+03:24:42 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
