@@ -1,8 +1,27 @@
-10:49:33 **** Incremental Build of configuration Debug for project RTOSDemo ****
+10:52:18 **** Incremental Build of configuration Debug for project RTOSDemo ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
-make: Nothing to be done for `main-build'.
+'Building file: ../src/lwIP_Demo/main_lwIP.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Brady\FreeRTOS_3\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_A9_Zynq_ZC702\RTOSDemo\src\lwIP_Demo\lwIP_port\include" -I"C:\Users\Brady\FreeRTOS_3\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_A9_Zynq_ZC702\RTOSDemo\src\lwIP_Demo\lwIP_port\netif" -I"C:\Users\Brady\FreeRTOS_3\FreeRTOSv9.0.0\FreeRTOS\Source\include" -I"C:\Users\Brady\FreeRTOS_3\FreeRTOSv9.0.0\FreeRTOS\Source\portable\GCC\ARM_CA9" -I"C:\Users\Brady\FreeRTOS_3\FreeRTOSv9.0.0\FreeRTOS\Demo\Common\ethernet\lwip-1.4.0\src\include\ipv4" -I"C:\Users\Brady\FreeRTOS_3\FreeRTOSv9.0.0\FreeRTOS\Demo\Common\ethernet\lwip-1.4.0\src\include" -I"C:\Users\Brady\FreeRTOS_3\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_A9_Zynq_ZC702\RTOSDemo\src\Full_Demo" -I"C:\Users\Brady\FreeRTOS_3\FreeRTOSv9.0.0\FreeRTOS-Plus\Source\FreeRTOS-Plus-CLI" -I"C:\Users\Brady\FreeRTOS_3\FreeRTOSv9.0.0\FreeRTOS\Demo\Common\include" -I"C:\Users\Brady\FreeRTOS_3\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_A9_Zynq_ZC702\RTOSDemo\src" -c -fmessage-length=0 -MT"src/lwIP_Demo/main_lwIP.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wextra -ffunction-sections -fdata-sections -IC:/Users/Brady/project_aleph/project_aleph.sdk/standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/lwIP_Demo/main_lwIP.d" -MT"src/lwIP_Demo/main_lwIP.o" -o "src/lwIP_Demo/main_lwIP.o" "../src/lwIP_Demo/main_lwIP.c"
+../src/lwIP_Demo/main_lwIP.c: In function 'main_lwIP':
+../src/lwIP_Demo/main_lwIP.c:162:15: error: 'getItemTask' undeclared (first use in this function)
+  xTaskCreate( getItemTask,     //The function that implements the task.
+               ^
+../src/lwIP_Demo/main_lwIP.c:162:15: note: each undeclared identifier is reported only once for each function it appears in
+../src/lwIP_Demo/main_lwIP.c:158:15: warning: unused variable 'xTimer' [-Wunused-variable]
+ TimerHandle_t xTimer;
+               ^
+../src/lwIP_Demo/main_lwIP.c: In function 'prvLEDToggleTimer':
+../src/lwIP_Demo/main_lwIP.c:197:46: warning: unused parameter 'pxTimer' [-Wunused-parameter]
+ static void prvLEDToggleTimer( TimerHandle_t pxTimer )
+                                              ^
+../src/lwIP_Demo/main_lwIP.c: At top level:
+../src/lwIP_Demo/main_lwIP.c:197:13: warning: 'prvLEDToggleTimer' defined but not used [-Wunused-function]
+ static void prvLEDToggleTimer( TimerHandle_t pxTimer )
+             ^
+make: *** [src/lwIP_Demo/main_lwIP.o] Error 1
 
-10:49:35 Build Finished (took 1s.783ms)
+10:52:24 Build Finished (took 5s.772ms)
 
