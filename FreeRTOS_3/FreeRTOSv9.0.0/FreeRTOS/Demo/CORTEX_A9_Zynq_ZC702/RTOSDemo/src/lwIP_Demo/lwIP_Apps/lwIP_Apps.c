@@ -152,7 +152,7 @@ static signed char cTxBuffer[ lwipappsTX_BUFFER_SIZE ];
 
 void vStatusCallback( struct netif *pxNetIf )
 {
-char pcMessage[20];
+char pcMessage[21];
 struct in_addr* pxIPAddress;
 
 	if( netif_is_up( pxNetIf ) != 0 )
@@ -160,6 +160,7 @@ struct in_addr* pxIPAddress;
 		strcpy( pcMessage, "IP=" );
 		pxIPAddress = ( struct in_addr* ) &( pxNetIf->ip_addr );
 		strcat( pcMessage, inet_ntoa( ( *pxIPAddress ) ) );
+		strcat(pcMessage,"\n");
 		xil_printf( pcMessage );
 	}
 	else

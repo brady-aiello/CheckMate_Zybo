@@ -156,7 +156,11 @@ err_t tcpRecvCallback(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err
          //UARTprintf("Contents of pbuf %s\n", (char *)p->payload);
      }
      char* message = (char *)p->payload;
-     xil_printf(message);
+     char code[4] = {0};
+     memcpy(code,(p->payload+9),3);
+     if(strcmp(code, "200")) {
+    	 xil_printf("FUCK STEALING SHIT\n");
+     }
      return 0;
  }
 
