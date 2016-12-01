@@ -93,6 +93,7 @@
 
 /* applications includes */
 #include "apps/httpserver_raw_from_lwIP_download/httpd.h"
+#include "apps/ScanEventListenServer/server.h"
 
 /* include the port-dependent configuration */
 #include "lwipcfg_msvc.h"
@@ -111,100 +112,6 @@ array.  If pccSSITags is updated, then these definitions must also be updated. *
 #define ssiTASK_STATS_INDEX			0
 #define ssiRUN_TIME_STATS_INDEX     1
 /*-----------------------------------------------------------*/
-err_t connectCallback(void *arg, struct tcp_pcb *tpcb, err_t err);
-void tcp_setup(void);
-uint32_t tcp_send_packet(void);
-err_t tcpRecvCallback(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err);
-struct tcp_pcb *testpcb;
-char *itemIDString;
-
-void tcp_setup(void)
-{
-    uint32_t data = 0xdeadbeef;
-
-    // create an ip
-    struct ip_addr ip;
-    IP4_ADDR(&ip, 24, 180, 11, 254);    //IP of my PHP server
-
-    // create the control block
-    testpcb = tcp_new();    //testpcb is a global struct tcp_pcb
-                            // as defined by lwIP
-
-    // dummy data to pass to callbacks
-
-    tcp_arg(testpcb, &data);
-
-    //register callbacks with the pcb
-
-    //tcp_err(testpcb, tcpErrorHandler);
-    tcp_recv(testpcb, tcpRecvCallback);
-    //tcp_sent(testpcb, tcpSendCallback);
-
-    // now connect
-    tcp_connect(testpcb, &ip, 3000, connectCallback);
-
-}
-
-  //connection established callback, err is unused and only return 0
- err_t connectCallback(void *arg, struct tcp_pcb *tpcb, err_t err)
-{
-	//UARTprintf("Connection Established.\n");
-	//UARTprintf("Now sending a packet\n");
-	tcp_send_packet();
-	return 0;
-}
-
- uint32_t tcp_send_packet(void)
- {
-	 char *string = "GET /items/verify/E200322F8191DA711306A768 HTTP/1.1\r\nHost: checkmateapps.co\r\n\r\n";
-
-     //char *string = "HEAD /process.php?data1=12&data2=5 HTTP/1.0\r\nHost: mywebsite.com\r\n\r\n ";
-     uint32_t len = strlen(string);
-
-     // push to buffer
-     err_t error = tcp_write(testpcb, string, strlen(string), TCP_WRITE_FLAG_COPY);
-
-     if (error) {
-         //UARTprintf("ERROR: Code: %d (tcp_send_packet :: tcp_write)\n", error);
-    	 xil_printf( "ERROR: Input: (tcp_send_packet :: tcp_write)\n");
-         return 1;
-     }
-
-     // now send
-     error = tcp_output(testpcb);
-     if (error) {
-         //UARTprintf("ERROR: Code: %d (tcp_send_packet :: tcp_output)\n", error);
-    	 xil_printf( "ERROR: Output: (tcp_send_packet :: tcp_write)\n");
-
-         return 1;
-     }
-     return 0;
- }
-
- err_t tcpRecvCallback(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err)
- {
-     //UARTprintf("Data recieved.\n");
-     if (p == NULL) {
-         //UARTprintf("The remote host closed the connection.\n");
-         //UARTprintf("Now I'm closing the connection.\n");
-    	 xil_printf("The remote host closed the connection.\n");
-    	 xil_printf("Now I'm closing the connection.\n");
-         //tcp_close_con();
-    	 tcp_close(tpcb);
-         return ERR_ABRT;
-     } else {
-         //UARTprintf("Number of pbufs %d\n", pbuf_clen(p));
-         //UARTprintf("Contents of pbuf %s\n", (char *)p->payload);
-     }
-     char* message = (char *)p->payload;
-     xil_printf(message);
-
-     return 0;
- }
-
-static void getItemTask( void *pvParameters, char* itemIDString){
-	tcp_setup();
-}
 
 
 /*
@@ -259,7 +166,6 @@ struct in_addr* pxIPAddress;
 	{
 		xil_printf( "Network is down" );
 	}
-	getItemTask(NULL, NULL);
 }
 
 /* Called from the TCP/IP thread. */
@@ -313,54 +219,13 @@ static struct netif xNetIf;
 	/* Create the httpd server from the standard lwIP code.  This demonstrates
 	use of the lwIP raw API. */
 	httpd_init();
+	eventListenerInit();
 
 	sys_thread_new( "lwIP_In", xemacif_input_thread, &xNetIf, configMINIMAL_STACK_SIZE, configMAC_INPUT_TASK_PRIORITY );
 
 	/* Create the FreeRTOS defined basic command server.  This demonstrates use
 	of the lwIP sockets API. */
 	xTaskCreate( vBasicSocketsCommandInterpreterTask, "CmdInt", configMINIMAL_STACK_SIZE * 5, NULL, configCLI_TASK_PRIORITY, NULL );
-	//xTaskCreate( getItemTask, "CmdInt", configMINIMAL_STACK_SIZE * 5, NULL, configCLI_TASK_PRIORITY, NULL );
-	/*int s;
-					  int ret;
-					  //u32_t opt;
-					  struct sockaddr_in addr;
-					  //fd_set readset;
-					  //fd_set writeset;
-					  //fd_set errset;
-					  //struct timeval tv;
-					  //u32_t ticks_a, ticks_b;
-					  //int err;
-
-					  //LWIP_UNUSED_ARG(arg);
-					   set up address to connect to
-					  memset(&addr, 0, sizeof(addr));
-					  addr.sin_len = sizeof(addr);
-					  addr.sin_family = AF_INET;
-					  addr.sin_port = PP_HTONS(SOCK_TARGET_PORT);
-					  addr.sin_addr.s_addr = inet_addr(SOCK_TARGET_HOST);
-
-					   first try blocking:
-
-					   create the socket
-					  s = lwip_socket(AF_INET, SOCK_STREAM, 0);
-					  LWIP_ASSERT("s >= 0", s >= 0);
-
-					   connect
-					  ret = lwip_connect(s, (struct sockaddr*)&addr, sizeof(addr));
-					   should succeed
-					  LWIP_ASSERT("ret == 0", ret == 0);
-
-					  char *urlStr = "GET /items/info/d6ee084b HTTP/1.1\n"\
-							  "Host: checkmateapps.co";
-
-					  int urlLength = strlen(urlStr);
-					   write something
-					  ret = lwip_write(s, urlStr, urlLength);
-					  //LWIP_ASSERT("ret == 4", ret == 4);
-
-					   close
-					  ret = lwip_close(s);
-				      LWIP_ASSERT("ret == 0", ret == 0);*/
 
 }
 /*-----------------------------------------------------------*/
