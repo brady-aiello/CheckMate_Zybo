@@ -252,18 +252,18 @@ line interface. */
 #define configMAC_ADDR5	0x16
 */
 
-#define configMAC_ADDR0	0x34
-#define configMAC_ADDR1	0x17
-#define configMAC_ADDR2	0xEB
-#define configMAC_ADDR3	0xA4
-#define configMAC_ADDR4	0x6D
-#define configMAC_ADDR5	0x71
+#define configMAC_ADDR0	0x69
+#define configMAC_ADDR1	0x69
+#define configMAC_ADDR2	0x69
+#define configMAC_ADDR3	0x69
+#define configMAC_ADDR4	0x69
+#define configMAC_ADDR5	0x69
 
 /* IP address configuration. */
-#define configIP_ADDR0		172
-#define configIP_ADDR1		25
-#define configIP_ADDR2		218
-#define configIP_ADDR3		200
+#define configIP_ADDR0		192
+#define configIP_ADDR1		168
+#define configIP_ADDR2		1
+#define configIP_ADDR3		10
 
 /* Netmask configuration. */
 #define configNET_MASK0		255
