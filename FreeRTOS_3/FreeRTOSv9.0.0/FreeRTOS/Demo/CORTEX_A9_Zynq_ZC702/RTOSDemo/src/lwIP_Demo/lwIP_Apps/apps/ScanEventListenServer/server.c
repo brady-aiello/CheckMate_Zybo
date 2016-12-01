@@ -24,12 +24,35 @@
 struct tcp_pcb *testpcb;
 
 /**
+ * The connection shall be actively closed.
+ * Reset the sent- and recv-callbacks.
+ *
+ * @param pcb the tcp pcb to reset callbacks
+ * @param hs connection state to free
+ */
+static err_t server_close_conn(struct tcp_pcb *pcb)
+{
+  err_t err;
+  LWIP_DEBUGF(HTTPD_DEBUG, ("Closing connection %p\n", (void*)pcb));
+
+  tcp_arg(pcb, NULL);
+  tcp_recv(pcb, NULL);
+  tcp_err(pcb, NULL);
+
+  err = tcp_close(pcb);
+  if (err != ERR_OK) {
+    LWIP_DEBUGF(HTTPD_DEBUG, ("Error %d closing %p\n", err, (void*)pcb));
+    /* error closing, try again later in poll */
+  }
+  return err;
+}
+
+/**
  * Data has been received on this pcb.
  * For HTTP 1.0, this should normally only happen once (if the request fits in one packet).
  */
 static err_t server_recv(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t err)
 {
-  xil_printf( "GOT IT!" );
   err_t parsed = ERR_ABRT;
   struct http_state *hs = (struct http_state *)arg;
   getItemTask(p->payload);
@@ -45,7 +68,7 @@ static err_t server_recv(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t e
       /* this should not happen, only to be robust */
       LWIP_DEBUGF(HTTPD_DEBUG, ("Error, http_recv: hs is NULL, close\n"));
     }
-    //http_close_conn(pcb, hs);
+    server_close_conn(pcb);
     return ERR_OK;
   }
     /* Inform TCP that we have taken the data. */
@@ -57,15 +80,13 @@ static err_t server_recv(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t e
     }
     if (parsed == ERR_ARG) {
       /* @todo: close on ERR_USE? */
-      //http_close_conn(pcb, hs);
+      server_close_conn(pcb);
     }
-
   return ERR_OK;
 }
 
 static err_t server_accept(void *arg, struct tcp_pcb *pcb, err_t err)
 {
-  struct http_state *hs;
   struct tcp_pcb_listen *lpcb = (struct tcp_pcb_listen*)arg;
   LWIP_UNUSED_ARG(err);
   LWIP_DEBUGF(HTTPD_DEBUG, ("http_accept %p / %p\n", (void*)pcb, arg));
@@ -136,7 +157,6 @@ err_t tcpRecvCallback(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err
      }
      char* message = (char *)p->payload;
      xil_printf(message);
-
      return 0;
  }
 
