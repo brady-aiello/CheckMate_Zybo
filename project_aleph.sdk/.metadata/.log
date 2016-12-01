@@ -8732,3 +8732,9 @@ java.lang.NullPointerException
 
 !ENTRY com.xilinx.sdk.utils 0 0 2016-11-29 10:52:42.725
 !MESSAGE XSDB command with result: [dow C:/Users/Brady/FreeRTOS_3/FreeRTOSv9.0.0/FreeRTOS/Demo/CORTEX_A9_Zynq_ZC702/RTOSDemo/Debug/RTOSDemo.elf], Result: [null, ]. Thread: Worker-16
+
+!ENTRY com.xilinx.sdk.utils 0 0 2016-11-29 11:39:18.430
+!MESSAGE XSDB Command: [disconnect tcfchan#1], Thread: Thread-189
+
+!ENTRY com.xilinx.sdk.utils 0 0 2016-11-29 11:39:18.467
+!MESSAGE XSDB command with result: [disconnect tcfchan#1], Result: [null, ]. Thread: Thread-189
