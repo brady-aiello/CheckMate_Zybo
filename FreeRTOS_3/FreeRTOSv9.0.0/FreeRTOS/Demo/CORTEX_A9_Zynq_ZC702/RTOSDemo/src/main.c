@@ -111,33 +111,12 @@
 #include "task.h"
 #include "semphr.h"
 
-/* Standard demo includes. */
-#include "partest.h"
-#include "TimerDemo.h"
-#include "QueueOverwrite.h"
-#include "EventGroupsDemo.h"
-#include "TaskNotify.h"
-#include "IntSemTest.h"
-
 /* Xilinx includes. */
 #include "platform.h"
 #include "xparameters.h"
 #include "xscutimer.h"
 #include "xscugic.h"
 #include "xil_exception.h"
-
-/* mainSELECTED_APPLICATION is used to select between three demo applications,
- * as described at the top of this file.
- *
- * When mainSELECTED_APPLICATION is set to 0 the simple blinky example will
- * be run.
- *
- * When mainSELECTED_APPLICATION is set to 1 the comprehensive test and demo
- * application will be run.
- *
- * When mainSELECTED_APPLICATION is set to 2 the lwIP example will be run.
- */
-#define mainSELECTED_APPLICATION	2
 
 /*-----------------------------------------------------------*/
 
@@ -150,15 +129,7 @@ static void prvSetupHardware( void );
  * See the comments at the top of this file and above the
  * mainSELECTED_APPLICATION definition.
  */
-#if ( mainSELECTED_APPLICATION == 0 )
-	extern void main_blinky( void );
-#elif ( mainSELECTED_APPLICATION == 1 )
-	extern void main_full( void );
-#elif ( mainSELECTED_APPLICATION == 2 )
-	extern void main_lwIP( void );
-#else
-	#error Invalid mainSELECTED_APPLICATION setting.  See the comments at the top of this file and above the mainSELECTED_APPLICATION definition.
-#endif
+extern void main_lwIP( void );
 
 /*
  * The Xilinx projects use a BSP that do not allow the start up code to be
@@ -196,19 +167,8 @@ int main( void )
 
 	/* The mainSELECTED_APPLICATION setting is described at the top	of this
 	file. */
-	#if( mainSELECTED_APPLICATION == 0 )
-	{
-		main_blinky();
-	}
-	#elif( mainSELECTED_APPLICATION == 1 )
-	{
-		main_full();
-	}
-	#else
-	{
-		main_lwIP();
-	}
-	#endif
+	main_lwIP();
+
 
 	/* Don't expect to reach here. */
 	return 0;
@@ -239,8 +199,6 @@ XScuGic_Config *pxGICConfig;
 	configASSERT( xStatus == XST_SUCCESS );
 	( void ) xStatus; /* Remove compiler warning if configASSERT() is not defined. */
 
-	/* Initialise the LED port. */
-	vParTestInitialise();
 
 	/* The Xilinx projects use a BSP that do not allow the start up code to be
 	altered easily.  Therefore the vector table used by FreeRTOS is defined in
@@ -317,25 +275,7 @@ volatile unsigned long ul = 0;
 
 void vApplicationTickHook( void )
 {
-	#if( mainSELECTED_APPLICATION == 1 )
-	{
-		/* The full demo includes a software timer demo/test that requires
-		prodding periodically from the tick interrupt. */
-		vTimerPeriodicISRTests();
 
-		/* Call the periodic queue overwrite from ISR demo. */
-		vQueueOverwritePeriodicISRDemo();
-
-		/* Call the periodic event group from ISR demo. */
-		vPeriodicEventGroupsProcessing();
-
-		/* Use task notifications from an interrupt. */
-		xNotifyTaskFromISR();
-
-		/* Use mutexes from interrupts. */
-		vInterruptSemaphorePeriodicTest();
-	}
-	#endif
 }
 /*-----------------------------------------------------------*/
 

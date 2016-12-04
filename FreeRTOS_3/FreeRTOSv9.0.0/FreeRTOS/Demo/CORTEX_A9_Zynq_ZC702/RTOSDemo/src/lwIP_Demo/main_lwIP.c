@@ -113,7 +113,6 @@
 
 
 /* Standard demo includes. */
-#include "partest.h"
 #include "semphr.h"
 /* lwIP includes. */
 #include "lwip/tcpip.h"
@@ -155,7 +154,6 @@ extern void lwIPAppsInit( void *pvArguments );
 
 void main_lwIP( void )
 {
-TimerHandle_t xTimer;
 
 	/* Init lwIP and start lwIP tasks. */
 	tcpip_init( lwIPAppsInit, NULL );
@@ -184,13 +182,3 @@ TimerHandle_t xTimer;
 	a privileged mode (not user mode). */
 	for( ;; );
 }
-
-
-/*-----------------------------------------------------------*/
-
-static void prvLEDToggleTimer( TimerHandle_t pxTimer )
-{
-
-}
-
-/*-----------------------------------------------------------*/

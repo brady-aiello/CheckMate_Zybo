@@ -144,10 +144,6 @@ err_t tcpRecvCallback(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err
  {
      //UARTprintf("Data recieved.\n");
      if (p == NULL) {
-         //UARTprintf("The remote host closed the connection.\n");
-         //UARTprintf("Now I'm closing the connection.\n");
-    	 xil_printf("The remote host closed the connection.\n");
-    	 xil_printf("Now I'm closing the connection.\n");
          //tcp_close_con();
     	 tcp_close(tpcb);
          return ERR_ABRT;
@@ -158,7 +154,7 @@ err_t tcpRecvCallback(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err
      char* message = (char *)p->payload;
      char code[4] = {0};
      memcpy(code,(p->payload+9),3);
-     if(strcmp(code, "200")) {
+     if(strcmp(code, "200") && strcmp(code, "404")) {
     	 xil_printf("FUCK STEALING SHIT\n");
      }
      return 0;
@@ -196,8 +192,10 @@ void tcp_setup(char* itemIDString)
  uint32_t tcp_send_packet(char* itemId)
  {
 	 char getRequest[100] = {0};
+	 itemId[24]=0;
 	 sprintf(getRequest, "GET /items/verify/%s HTTP/1.1\r\nHost: checkmateapps.co\r\n\r\n", itemId);
 
+	 xil_printf("packet %s\n",getRequest);
      //char *string = "HEAD /process.php?data1=12&data2=5 HTTP/1.0\r\nHost: mywebsite.com\r\n\r\n ";
      uint32_t len = strlen(getRequest);
 

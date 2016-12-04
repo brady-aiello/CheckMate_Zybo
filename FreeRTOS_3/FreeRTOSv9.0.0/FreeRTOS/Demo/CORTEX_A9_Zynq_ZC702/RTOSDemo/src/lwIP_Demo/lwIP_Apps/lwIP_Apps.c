@@ -92,7 +92,6 @@
 //#define LWIP_DBG_TRACE 1
 
 /* applications includes */
-#include "apps/httpserver_raw_from_lwIP_download/httpd.h"
 #include "apps/ScanEventListenServer/server.h"
 
 /* include the port-dependent configuration */
@@ -209,9 +208,6 @@ static struct netif xNetIf;
 	}
 	#endif
 
-	/* Install the server side include handler. */
-	http_set_ssi_handler( uslwIPAppsSSIHandler, pccSSITags, sizeof( pccSSITags ) / sizeof( char * ) );
-
 	/* Create the mutex used to ensure mutual exclusive access to the Tx 
 	buffer. */
 	xTxBufferMutex = xSemaphoreCreateMutex();
@@ -219,14 +215,9 @@ static struct netif xNetIf;
 
 	/* Create the httpd server from the standard lwIP code.  This demonstrates
 	use of the lwIP raw API. */
-	httpd_init();
 	eventListenerInit();
 
 	sys_thread_new( "lwIP_In", xemacif_input_thread, &xNetIf, configMINIMAL_STACK_SIZE, configMAC_INPUT_TASK_PRIORITY );
-
-	/* Create the FreeRTOS defined basic command server.  This demonstrates use
-	of the lwIP sockets API. */
-	xTaskCreate( vBasicSocketsCommandInterpreterTask, "CmdInt", configMINIMAL_STACK_SIZE * 5, NULL, configCLI_TASK_PRIORITY, NULL );
 
 }
 /*-----------------------------------------------------------*/
@@ -257,7 +248,6 @@ extern char *pcMainGetTaskStatusMessage( void );
 	/* Include a count of the number of times an SSI function has been executed
 	in the returned string. */
 	uiUpdateCount++;
-	sprintf( cUpdateString, "\r\n\r\n%u\r\nStatus - %s", uiUpdateCount, pcMainGetTaskStatusMessage() );
 	strcat( pcBuffer, cUpdateString );
 
 	return strlen( pcBuffer );
