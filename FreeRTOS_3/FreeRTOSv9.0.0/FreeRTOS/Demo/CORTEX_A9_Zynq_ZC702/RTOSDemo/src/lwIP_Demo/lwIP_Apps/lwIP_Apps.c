@@ -159,7 +159,7 @@ struct in_addr* pxIPAddress;
 		strcpy( pcMessage, "IP=" );
 		pxIPAddress = ( struct in_addr* ) &( pxNetIf->ip_addr );
 		strcat( pcMessage, inet_ntoa( ( *pxIPAddress ) ) );
-		strcat(pcMessage,"\n");
+		strcat(pcMessage,"\r\n");
 		xil_printf( pcMessage );
 	}
 	else
