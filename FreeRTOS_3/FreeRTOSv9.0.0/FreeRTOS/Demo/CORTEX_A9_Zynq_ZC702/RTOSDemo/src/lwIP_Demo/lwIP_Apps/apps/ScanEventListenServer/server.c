@@ -21,7 +21,34 @@
 #define HTTPD_TCP_PRIO                      TCP_PRIO_MIN
 #endif
 
-struct tcp_pcb *testpcb;
+uint32_t make_request(char* itemId, struct tcp_pcb *tpcb) {
+	 xil_printf("Requesting Status For %s\r\n",itemId);
+	 char getRequest[100] = {0};
+	 sprintf(getRequest, "GET /items/verify/%s HTTP/1.1\r\nHost: checkmateapps.co\r\n\r\n", itemId);
+     free(itemId);
+
+     //char *string = "HEAD /process.php?data1=12&data2=5 HTTP/1.0\r\nHost: mywebsite.com\r\n\r\n ";
+     uint32_t len = strlen(getRequest);
+
+     // push to buffer
+     err_t error = tcp_write(tpcb, getRequest, len, TCP_WRITE_FLAG_COPY);
+
+     if (error) {
+         //UARTprintf("ERROR: Code: %d (tcp_send_packet :: tcp_write)\n", error);
+    	 xil_printf( "ERROR: Input: (tcp_send_packet :: tcp_write)\n");
+         return 1;
+     }
+
+     // now send
+     error = tcp_output(tpcb);
+     if (error) {
+         //UARTprintf("ERROR: Code: %d (tcp_send_packet :: tcp_output)\n", error);
+    	 xil_printf( "ERROR: Output: (tcp_send_packet :: tcp_write)\n");
+
+         return 1;
+     }
+     return 0;
+}
 
 /**
  * The connection shall be actively closed.
@@ -55,7 +82,18 @@ static err_t server_recv(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t e
 {
   err_t parsed = ERR_ABRT;
   struct http_state *hs = (struct http_state *)arg;
-  getItemTask(p->payload);
+  xil_printf("Received Notification\r\n");
+  int remaining = p->len;
+  int pos = 0;
+  while(remaining>=26) {
+	  char* currentSerial = calloc(sizeof(char),25);
+	  memcpy(currentSerial,(char*)(p->payload)+pos,24);
+	  currentSerial[24]=0;
+	  xil_printf("Checking: %s\r\n",currentSerial);
+	  getItemTask(currentSerial);
+	  remaining-= 26;
+	  pos+=26;
+  }
 
   if ((err != ERR_OK) || (p == NULL) || (hs == NULL)) {
     /* error or closed by other side? */
@@ -136,7 +174,7 @@ err_t connectCallback(void *arg, struct tcp_pcb *tpcb, err_t err)
 {
 	//UARTprintf("Connection Established.\n");
 	//UARTprintf("Now sending a packet\n");
-	tcp_send_packet(arg);
+	make_request(arg, tpcb);
 	return 0;
 }
 
@@ -171,6 +209,7 @@ void tcp_setup(char* itemIDString)
     struct ip_addr ip;
     IP4_ADDR(&ip, 24, 180, 11, 254);    //IP of my PHP server
 
+    struct tcp_pcb *testpcb;
     // create the control block
     testpcb = tcp_new();    //testpcb is a global struct tcp_pcb
                             // as defined by lwIP
@@ -189,39 +228,6 @@ void tcp_setup(char* itemIDString)
     tcp_connect(testpcb, &ip, 3000, connectCallback);
 
 }
-
-  //connection established callback, err is unused and only return 0
-
-
- uint32_t tcp_send_packet(char* itemId)
- {
-	 char getRequest[100] = {0};
-	 itemId[24]=0;
-	 sprintf(getRequest, "GET /items/verify/%s HTTP/1.1\r\nHost: checkmateapps.co\r\n\r\n", itemId);
-
-
-     //char *string = "HEAD /process.php?data1=12&data2=5 HTTP/1.0\r\nHost: mywebsite.com\r\n\r\n ";
-     uint32_t len = strlen(getRequest);
-
-     // push to buffer
-     err_t error = tcp_write(testpcb, getRequest, len, TCP_WRITE_FLAG_COPY);
-
-     if (error) {
-         //UARTprintf("ERROR: Code: %d (tcp_send_packet :: tcp_write)\n", error);
-    	 xil_printf( "ERROR: Input: (tcp_send_packet :: tcp_write)\n");
-         return 1;
-     }
-
-     // now send
-     error = tcp_output(testpcb);
-     if (error) {
-         //UARTprintf("ERROR: Code: %d (tcp_send_packet :: tcp_output)\n", error);
-    	 xil_printf( "ERROR: Output: (tcp_send_packet :: tcp_write)\n");
-
-         return 1;
-     }
-     return 0;
- }
 
 
 

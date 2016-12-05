@@ -16,7 +16,6 @@
 
 void eventListenerInit(void);
 void tcp_setup(char*);
-uint32_t tcp_send_packet(char *);
 static void getItemTask(char*);
 
 #endif /* SRC_LWIP_DEMO_LWIP_APPS_APPS_SCANEVENTLISTENSERVER_SERVER_H_ */
