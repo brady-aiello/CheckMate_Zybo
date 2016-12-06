@@ -12,6 +12,7 @@
 
 #include <string.h>
 #include <stdlib.h>
+#include "xgpio.h"
 
 #ifndef EVENT_LISTEN_SERVER_PORT
 #define EVENT_LISTEN_SERVER_PORT                   32305
@@ -20,6 +21,7 @@
 #ifndef HTTPD_TCP_PRIO
 #define HTTPD_TCP_PRIO                      TCP_PRIO_MIN
 #endif
+static XGpio xGpio;
 
 uint32_t make_request(char* itemId, struct tcp_pcb *tpcb) {
 	 xil_printf("Requesting Status For %s\r\n",itemId);
@@ -147,6 +149,11 @@ static err_t server_accept(void *arg, struct tcp_pcb *pcb, err_t err)
 void eventListenerInit(void)
 {
 	initServer(IP_ADDR_ANY);
+	XGpio_Config *pxConfigPtr;
+    BaseType_t xStatus;
+    pxConfigPtr = XGpio_LookupConfig( XPAR_GPIO_0_DEVICE_ID );
+	xStatus = XGpio_CfgInitialize( &xGpio, pxConfigPtr, pxConfigPtr->BaseAddress );
+
 }
 
 /**
@@ -198,6 +205,9 @@ err_t tcpRecvCallback(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err
     	 xil_printf("LOL WUT?\r\n");
      } else {
     	 xil_printf("FUCK STEALING SHIT\r\n");
+    		XGpio_DiscreteWrite(&xGpio, 1, 1); //pattern
+    		//vTaskDelay(1);
+    		XGpio_DiscreteWrite(&xGpio, 1, 0); //pattern
      }
      return 0;
  }

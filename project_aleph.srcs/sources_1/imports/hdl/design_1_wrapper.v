@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Fri Sep 30 16:20:44 2016
+//Date        : Mon Dec 05 18:43:06 2016
 //Host        : Brady-LT running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -30,7 +30,11 @@ module design_1_wrapper
     FIXED_IO_mio,
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
-    FIXED_IO_ps_srstb);
+    FIXED_IO_ps_srstb,
+    //R_CLOCK,
+    alarm_off_tri_i,
+    alarm_sound_tri_o);
+    //alarm_trigger_tri_o);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -52,6 +56,10 @@ module design_1_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
+  //output R_CLOCK;
+  //output [0:0]alarm_trigger_tri_o;
+  input [0:0]alarm_off_tri_i;
+  output [0:0]alarm_sound_tri_o;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -74,9 +82,20 @@ module design_1_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
-
+  wire R_CLOCK;
+  wire [0:0]alarm_trigger_tri_o;
+  wire [0:0]alarm_off_tri_i;
+  wire [0:0]alarm_sound_tri_o;
+  
+  alarm alarm_i
+        (.clock(R_CLOCK),
+         .j(alarm_trigger_tri_o[0]),
+         .k(alarm_off_tri_i[0]),
+         .q(alarm_sound_tri_o[0]));
+         
   design_1 design_1_i
-       (.DDR_addr(DDR_addr),
+       (.ALARM_TRIGGER_tri_o(alarm_trigger_tri_o),
+        .DDR_addr(DDR_addr),
         .DDR_ba(DDR_ba),
         .DDR_cas_n(DDR_cas_n),
         .DDR_ck_n(DDR_ck_n),
@@ -96,5 +115,6 @@ module design_1_wrapper
         .FIXED_IO_mio(FIXED_IO_mio),
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
-        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb));
+        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
+        .R_CLOCK(R_CLOCK));
 endmodule

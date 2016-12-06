@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1475277688">
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1481047388">
   <File Type="OPT-DCP" Name="design_1_wrapper_opt.dcp"/>
   <File Type="ROUTE-STATUS-PB" Name="design_1_wrapper_route_status.pb"/>
   <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
@@ -59,6 +59,13 @@
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/alarm.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -69,7 +76,7 @@
     <File Path="$PSRCDIR/sources_1/imports/hdl/design_1_wrapper.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v"/>
-        <Attr Name="ImportTime" Val="1475277644"/>
+        <Attr Name="ImportTime" Val="1481046909"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -83,6 +90,14 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/Brady/ZYBO_Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ZYBO_Master.xdc"/>
+        <Attr Name="ImportTime" Val="1475380586"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>

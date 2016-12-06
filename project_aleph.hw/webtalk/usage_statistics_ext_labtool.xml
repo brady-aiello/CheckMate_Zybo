@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_ext_labtool.xml'  majorVersion='1' minorVersion='0' timeStamp='Thu Nov 03 08:24:03 2016'>
+<webTalkData  fileName='usage_statistics_ext_labtool.xml'  majorVersion='1' minorVersion='0' timeStamp='Tue Dec 06 09:43:55 2016'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="1577090" description="" />
-  <keyValuePair key="date_generated" value="Thu Nov 03 08:24:03 2016" description="" />
+  <keyValuePair key="date_generated" value="Tue Dec 06 09:43:49 2016" description="" />
   <keyValuePair key="os_platform" value="WIN64" description="" />
   <keyValuePair key="product_version" value="Vivado v2016.2 (64-bit)" description="" />
   <keyValuePair key="project_id" value="17b1dee7-b481-417e-823e-81cda9b026ad" description="" />
-  <keyValuePair key="project_iteration" value="1" description="" />
+  <keyValuePair key="project_iteration" value="2" description="" />
   <keyValuePair key="random_id" value="f9da2dc84b265acfa1113aa62572af47" description="" />
   <keyValuePair key="registration_id" value="f9da2dc84b265acfa1113aa62572af47" description="" />
   <keyValuePair key="route_design" value="FALSE" description="" />

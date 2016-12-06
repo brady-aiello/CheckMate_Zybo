@@ -10,19 +10,31 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/Brady/project_aleph/project_aleph.cache/wt [current_project]
-set_property parent.project_path C:/Users/Brady/project_aleph/project_aleph.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.cache/wt [current_project]
+set_property parent.project_path C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.xpr [current_project]
+set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-add_files C:/Users/Brady/project_aleph/project_aleph.srcs/sources_1/bd/design_1/design_1.bd
-set_property used_in_implementation false [get_files -all c:/Users/Brady/project_aleph/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
-set_property used_in_implementation false [get_files -all C:/Users/Brady/project_aleph/project_aleph.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
-set_property is_locked true [get_files C:/Users/Brady/project_aleph/project_aleph.srcs/sources_1/bd/design_1/design_1.bd]
+add_files C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/design_1.bd
+set_property used_in_implementation false [get_files -all c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
+set_property is_locked true [get_files C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/design_1.bd]
 
-read_verilog -library xil_defaultlib C:/Users/Brady/project_aleph/project_aleph.srcs/sources_1/imports/hdl/design_1_wrapper.v
+read_verilog -library xil_defaultlib -sv C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/new/alarm.sv
+read_verilog -library xil_defaultlib C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/imports/hdl/design_1_wrapper.v
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp
 }
+read_xdc C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/constrs_1/imports/Brady/ZYBO_Master.xdc
+set_property used_in_implementation false [get_files C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/constrs_1/imports/Brady/ZYBO_Master.xdc]
+
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 

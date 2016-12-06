@@ -25,6 +25,7 @@ src/Full_Demo/FreeRTOS-Plus-CLI \
 src/Full_Demo \
 src/Full_Demo/Standard-Demo-Tasks/Minimal \
 src/lwIP_Demo/lwIP_Apps/apps/BasicSocketCommandServer \
+src/lwIP_Demo/lwIP_Apps/apps/ScanEventListenServer \
 src/lwIP_Demo/lwIP_Apps/apps/httpserver_raw_from_lwIP_download \
 src/lwIP_Demo/lwIP_Apps \
 src/lwIP_Demo/lwIP_port/netif \

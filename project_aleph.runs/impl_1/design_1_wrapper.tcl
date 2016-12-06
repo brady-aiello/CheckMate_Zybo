@@ -50,13 +50,23 @@ set rc [catch {
   create_msg_db init_design.pb
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/Brady/project_aleph/project_aleph.cache/wt [current_project]
-  set_property parent.project_path C:/Users/Brady/project_aleph/project_aleph.xpr [current_project]
-  set_property ip_repo_paths c:/Users/Brady/project_aleph/project_aleph.cache/ip [current_project]
-  set_property ip_output_repo c:/Users/Brady/project_aleph/project_aleph.cache/ip [current_project]
-  add_files -quiet C:/Users/Brady/project_aleph/project_aleph.runs/synth_1/design_1_wrapper.dcp
-  read_xdc -ref design_1_processing_system7_0_0 -cells inst c:/Users/Brady/project_aleph/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc
-  set_property processing_order EARLY [get_files c:/Users/Brady/project_aleph/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
+  set_property webtalk.parent_dir C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.cache/wt [current_project]
+  set_property parent.project_path C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.xpr [current_project]
+  set_property ip_repo_paths c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.cache/ip [current_project]
+  set_property ip_output_repo c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.cache/ip [current_project]
+  set_property XPM_LIBRARIES XPM_CDC [current_project]
+  add_files -quiet C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.runs/synth_1/design_1_wrapper.dcp
+  read_xdc -ref design_1_processing_system7_0_0 -cells inst c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc
+  set_property processing_order EARLY [get_files c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
+  read_xdc -prop_thru_buffers -ref design_1_axi_gpio_0_0 -cells U0 c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_board.xdc
+  set_property processing_order EARLY [get_files c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_board.xdc]
+  read_xdc -ref design_1_axi_gpio_0_0 -cells U0 c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xdc
+  set_property processing_order EARLY [get_files c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xdc]
+  read_xdc -prop_thru_buffers -ref design_1_rst_processing_system7_0_100M_0 -cells U0 c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0_board.xdc
+  set_property processing_order EARLY [get_files c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0_board.xdc]
+  read_xdc -ref design_1_rst_processing_system7_0_100M_0 -cells U0 c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0.xdc
+  set_property processing_order EARLY [get_files c:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0.xdc]
+  read_xdc C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.srcs/constrs_1/imports/Brady/ZYBO_Master.xdc
   link_design -top design_1_wrapper -part xc7z010clg400-1
   write_hwdef -file design_1_wrapper.hwdef
   close_msg_db -file init_design.pb

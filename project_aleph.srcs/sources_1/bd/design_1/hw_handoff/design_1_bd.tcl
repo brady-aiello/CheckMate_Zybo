@@ -153,10 +153,19 @@ proc create_root_design { parentCell } {
 
 
   # Create interface ports
+  set ALARM_TRIGGER [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 ALARM_TRIGGER ]
   set DDR [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR ]
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
 
   # Create ports
+  set R_CLOCK [ create_bd_port -dir O -type clk R_CLOCK ]
+
+  # Create instance: axi_gpio_0, and set properties
+  set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
+  set_property -dict [ list \
+CONFIG.C_ALL_OUTPUTS {1} \
+CONFIG.C_GPIO_WIDTH {1} \
+ ] $axi_gpio_0
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -166,7 +175,7 @@ CONFIG.PCW_ACT_CAN_PERIPHERAL_FREQMHZ {10.000000} \
 CONFIG.PCW_ACT_DCI_PERIPHERAL_FREQMHZ {10.096154} \
 CONFIG.PCW_ACT_ENET0_PERIPHERAL_FREQMHZ {125.000000} \
 CONFIG.PCW_ACT_ENET1_PERIPHERAL_FREQMHZ {10.000000} \
-CONFIG.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ {10.000000} \
+CONFIG.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ {100.000000} \
 CONFIG.PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ {10.000000} \
 CONFIG.PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ {10.000000} \
 CONFIG.PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ {10.000000} \
@@ -201,7 +210,7 @@ CONFIG.PCW_CAN_PERIPHERAL_CLKSRC {IO PLL} \
 CONFIG.PCW_CAN_PERIPHERAL_DIVISOR0 {1} \
 CONFIG.PCW_CAN_PERIPHERAL_DIVISOR1 {1} \
 CONFIG.PCW_CAN_PERIPHERAL_FREQMHZ {100} \
-CONFIG.PCW_CLK0_FREQ {10000000} \
+CONFIG.PCW_CLK0_FREQ {100000000} \
 CONFIG.PCW_CLK1_FREQ {10000000} \
 CONFIG.PCW_CLK2_FREQ {10000000} \
 CONFIG.PCW_CLK3_FREQ {10000000} \
@@ -259,7 +268,7 @@ CONFIG.PCW_ENET_RESET_ENABLE {1} \
 CONFIG.PCW_ENET_RESET_POLARITY {Active Low} \
 CONFIG.PCW_ENET_RESET_SELECT {Share reset pin} \
 CONFIG.PCW_EN_4K_TIMER {0} \
-CONFIG.PCW_EN_CLK0_PORT {0} \
+CONFIG.PCW_EN_CLK0_PORT {1} \
 CONFIG.PCW_EN_EMIO_I2C0 {1} \
 CONFIG.PCW_EN_EMIO_TTC0 {1} \
 CONFIG.PCW_EN_EMIO_WDT {1} \
@@ -273,8 +282,8 @@ CONFIG.PCW_EN_UART1 {1} \
 CONFIG.PCW_EN_USB0 {1} \
 CONFIG.PCW_EN_WDT {1} \
 CONFIG.PCW_FCLK0_PERIPHERAL_CLKSRC {IO PLL} \
-CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR0 {1} \
-CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {1} \
+CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR0 {5} \
+CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {2} \
 CONFIG.PCW_FCLK1_PERIPHERAL_CLKSRC {DDR PLL} \
 CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR0 {1} \
 CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR1 {1} \
@@ -284,10 +293,12 @@ CONFIG.PCW_FCLK2_PERIPHERAL_DIVISOR1 {1} \
 CONFIG.PCW_FCLK3_PERIPHERAL_CLKSRC {IO PLL} \
 CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR0 {1} \
 CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR1 {1} \
+CONFIG.PCW_FCLK_CLK0_BUF {true} \
 CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100.000000} \
 CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {175.000000} \
 CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {12.288000} \
 CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ {100.000000} \
+CONFIG.PCW_FPGA_FCLK0_ENABLE {1} \
 CONFIG.PCW_FTM_CTI_IN0 {<Select>} \
 CONFIG.PCW_FTM_CTI_IN1 {<Select>} \
 CONFIG.PCW_FTM_CTI_IN2 {<Select>} \
@@ -619,7 +630,7 @@ CONFIG.PCW_QSPI_GRP_SS1_IO {<Select>} \
 CONFIG.PCW_QSPI_PERIPHERAL_CLKSRC {IO PLL} \
 CONFIG.PCW_QSPI_PERIPHERAL_DIVISOR0 {5} \
 CONFIG.PCW_QSPI_PERIPHERAL_ENABLE {1} \
-CONFIG.PCW_QSPI_PERIPHERAL_FREQMHZ {200.000000} \
+CONFIG.PCW_QSPI_PERIPHERAL_FREQMHZ {200} \
 CONFIG.PCW_QSPI_QSPI_IO {MIO 1 .. 6} \
 CONFIG.PCW_SD0_GRP_CD_ENABLE {1} \
 CONFIG.PCW_SD0_GRP_CD_IO {MIO 47} \
@@ -807,7 +818,7 @@ CONFIG.PCW_USB_RESET_ENABLE {1} \
 CONFIG.PCW_USB_RESET_POLARITY {Active Low} \
 CONFIG.PCW_USB_RESET_SELECT {Share reset pin} \
 CONFIG.PCW_USE_CROSS_TRIGGER {0} \
-CONFIG.PCW_USE_M_AXI_GP0 {0} \
+CONFIG.PCW_USE_M_AXI_GP0 {1} \
 CONFIG.PCW_WDT_PERIPHERAL_CLKSRC {CPU_1X} \
 CONFIG.PCW_WDT_PERIPHERAL_DIVISOR0 {1} \
 CONFIG.PCW_WDT_PERIPHERAL_ENABLE {1} \
@@ -939,10 +950,12 @@ CONFIG.PCW_FCLK2_PERIPHERAL_DIVISOR1.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FCLK3_PERIPHERAL_CLKSRC.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR0.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR1.VALUE_SRC {DEFAULT} \
+CONFIG.PCW_FCLK_CLK0_BUF.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ.VALUE_SRC {DEFAULT} \
+CONFIG.PCW_FPGA_FCLK0_ENABLE.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FTM_CTI_IN0.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FTM_CTI_IN1.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FTM_CTI_IN2.VALUE_SRC {DEFAULT} \
@@ -1464,14 +1477,55 @@ CONFIG.PCW_WDT_PERIPHERAL_FREQMHZ.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_WDT_WDT_IO.VALUE_SRC {DEFAULT} \
  ] $processing_system7_0
 
+  # Create instance: processing_system7_0_axi_periph, and set properties
+  set processing_system7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 processing_system7_0_axi_periph ]
+  set_property -dict [ list \
+CONFIG.NUM_MI {1} \
+ ] $processing_system7_0_axi_periph
+
+  # Create instance: rst_processing_system7_0_100M, and set properties
+  set rst_processing_system7_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_processing_system7_0_100M ]
+
   # Create interface connections
+  connect_bd_intf_net -intf_net axi_gpio_0_GPIO [get_bd_intf_ports ALARM_TRIGGER] [get_bd_intf_pins axi_gpio_0/GPIO]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
+  connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins processing_system7_0_axi_periph/S00_AXI]
+  connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M00_AXI [get_bd_intf_pins axi_gpio_0/S_AXI] [get_bd_intf_pins processing_system7_0_axi_periph/M00_AXI]
 
   # Create port connections
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_ports R_CLOCK] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_100M/slowest_sync_clk]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_100M/ext_reset_in]
+  connect_bd_net -net rst_processing_system7_0_100M_interconnect_aresetn [get_bd_pins processing_system7_0_axi_periph/ARESETN] [get_bd_pins rst_processing_system7_0_100M/interconnect_aresetn]
+  connect_bd_net -net rst_processing_system7_0_100M_peripheral_aresetn [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins processing_system7_0_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_processing_system7_0_100M/peripheral_aresetn]
 
   # Create address segments
+  create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
 
+  # Perform GUI Layout
+  regenerate_bd_layout -layout_string {
+   guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -y 40 -defaultsOSRD
+preplace port R_CLOCK -pg 1 -y 200 -defaultsOSRD
+preplace port ALARM_TRIGGER -pg 1 -y 140 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 60 -defaultsOSRD
+preplace inst rst_processing_system7_0_100M -pg 1 -lvl 2 -y 301 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 2 -y 141 -defaultsOSRD
+preplace inst processing_system7_0_axi_periph -pg 1 -lvl 3 -y 270 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y 130 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 1 3 NJ 10 NJ 10 NJ
+preplace netloc processing_system7_0_axi_periph_M00_AXI 1 1 3 440 50 NJ 50 1100
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 NJ 70 790
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 1 400
+preplace netloc rst_processing_system7_0_100M_peripheral_aresetn 1 1 2 430 30 770
+preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 40 NJ 40 NJ
+preplace netloc axi_gpio_0_GPIO 1 2 2 NJ 140 NJ
+preplace netloc rst_processing_system7_0_100M_interconnect_aresetn 1 2 1 760
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 20 -30 410 20 800 150 1120
+levelinfo -pg 1 0 210 600 950 1170 -top -120 -bot 400
+",
+}
 
   # Restore current instance
   current_bd_instance $oldCurInst

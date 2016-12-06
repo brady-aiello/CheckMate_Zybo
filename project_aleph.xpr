@@ -3,25 +3,26 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="14" Path="C:/Users/Brady/project_aleph/project_aleph.xpr">
+<Project Version="7" Minor="14" Path="C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="d357bf9ff93a470b903ee1523367267f"/>
     <Option Name="Part" Val="xc7z010clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
-    <Option Name="CompiledLibDirModelSim" Val="$PCACHEDIR/compile_simlib/modelsim"/>
-    <Option Name="CompiledLibDirQuesta" Val="$PCACHEDIR/compile_simlib/questa"/>
-    <Option Name="CompiledLibDirIES" Val="$PCACHEDIR/compile_simlib/ies"/>
-    <Option Name="CompiledLibDirVCS" Val="$PCACHEDIR/compile_simlib/vcs"/>
-    <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
-    <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
+    <Option Name="CompiledLibDirModelSim" Val="C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.cache/compile_simlib/modelsim"/>
+    <Option Name="CompiledLibDirQuesta" Val="C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.cache/compile_simlib/questa"/>
+    <Option Name="CompiledLibDirIES" Val="C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.cache/compile_simlib/ies"/>
+    <Option Name="CompiledLibDirVCS" Val="C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.cache/compile_simlib/vcs"/>
+    <Option Name="CompiledLibDirRiviera" Val="C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.cache/compile_simlib/riviera"/>
+    <Option Name="CompiledLibDirActivehdl" Val="C:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.cache/compile_simlib/activehdl"/>
     <Option Name="BoardPart" Val=""/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="EnableCoreContainer" Val="FALSE"/>
+    <Option Name="XPMLibraries" Val="XPM_CDC"/>
     <Option Name="CreateRefXciForCoreContainers" Val="FALSE"/>
-    <Option Name="IPUserFilesDir" Val="$PPRDIR/project_aleph.ip_user_files"/>
+    <Option Name="IPUserFilesDir" Val="$PPRDIR/../../project_aleph/project_aleph.ip_user_files"/>
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/project_aleph.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="WTXSimLaunchSim" Val="0"/>
@@ -42,17 +43,34 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
+      <File Path="$PSRCDIR/sources_1/new/alarm.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0.xci"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="hdl/design_1.v"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_auto_pc_0/design_1_auto_pc_0.xci"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="design_1_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="hdl/design_1.hwdef"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="hw_handoff/design_1_bd.tcl"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="hw_handoff/design_1.hwh"/>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/hdl/design_1_wrapper.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v"/>
-          <Attr Name="ImportTime" Val="1475277644"/>
+          <Attr Name="ImportTime" Val="1481046909"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -66,6 +84,14 @@
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
+      <File Path="$PSRCDIR/constrs_1/imports/Brady/ZYBO_Master.xdc">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../ZYBO_Master.xdc"/>
+          <Attr Name="ImportTime" Val="1475380586"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>

@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="tcp_close" key="selection"/>
+		<item value="initServer" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="initServer"/>
+			<item value="tcp_setup"/>
+			<item value="stealing"/>
 			<item value="tcp_close"/>
 			<item value="tcp"/>
 			<item value="tcpclose"/>
 			<item value="lClientFd"/>
 			<item value="callback"/>
-			<item value="getItemTask"/>
-			<item value="xSem"/>
-			<item value="vSem"/>
 		</list>
 		<list key="replacehistory">
 		</list>

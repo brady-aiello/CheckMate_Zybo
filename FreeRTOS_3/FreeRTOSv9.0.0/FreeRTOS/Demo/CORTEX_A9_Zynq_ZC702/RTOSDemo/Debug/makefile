@@ -15,6 +15,7 @@ RM := rm -rf
 -include src/lwIP_Demo/lwIP_port/netif/subdir.mk
 -include src/lwIP_Demo/lwIP_port/subdir.mk
 -include src/lwIP_Demo/lwIP_Apps/apps/httpserver_raw_from_lwIP_download/subdir.mk
+-include src/lwIP_Demo/lwIP_Apps/apps/ScanEventListenServer/subdir.mk
 -include src/lwIP_Demo/lwIP_Apps/apps/BasicSocketCommandServer/subdir.mk
 -include src/lwIP_Demo/lwIP_Apps/subdir.mk
 -include src/lwIP_Demo/subdir.mk
@@ -55,7 +56,7 @@ main-build: RTOSDemo.elf secondary-outputs
 RTOSDemo.elf: $(OBJS) ../src/lscript.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM v7 gcc linker'
-	arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Xlinker --gc-sections -Xlinker -Map -Xlinker RTOSDemo.map -Wl,-T -Wl,../src/lscript.ld -LC:/Users/Brady/project_aleph/project_aleph.sdk/standalone_bsp_0/ps7_cortexa9_0/lib -o "RTOSDemo.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Xlinker --gc-sections -Xlinker -Map -Xlinker RTOSDemo.map -Wl,-T -Wl,../src/lscript.ld -LC:/Users/Brady/for_real_final/CheckMate_Zybo/project_aleph.sdk/standalone_bsp_1/ps7_cortexa9_0/lib -o "RTOSDemo.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
